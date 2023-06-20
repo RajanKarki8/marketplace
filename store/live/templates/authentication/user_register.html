@@ -1,0 +1,21 @@
+{%extends 'live/base.html'%}
+ {%load crispy_forms_tags%}
+{%block title%} register-page {%endblock title%}
+
+{%block content%}
+
+<h2>User-Registeration-Page</h2>
+<div class= 'container'>
+    <fieldset> 
+<form method = 'POST' action = ''>
+    {%csrf_token%}
+   {{form|crispy}}
+</fieldset>
+<input type = 'submit' value = 'Sign-up'>
+</form>
+
+<p>Already Have an account?</p>
+<a href = "{%url 'login'%}">Login</a>
+</div>
+
+{%endblock content%}

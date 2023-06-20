@@ -1,0 +1,19 @@
+{%extends 'live/base.html'%}
+{%load crispy_forms_tags%}
+{%block title%} login {%endblock title%}
+        {%block content%}
+        <div class = 'container'>
+        <h3 class = 'login'>Login</h3>
+       <form method = 'POST' action = ''>
+        {% csrf_token %}
+        
+        {{forms|crispy}}
+        
+        <input type = 'submit' value = 'login'>
+       </form>
+
+       <p>Need an account</p><a href = "{%url 'register'%}">sign-up</a>
+</div>
+       {%endblock content%}
+        
+        
