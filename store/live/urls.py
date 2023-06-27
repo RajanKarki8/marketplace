@@ -10,6 +10,7 @@ urlpatterns = [
      path('cart/', views.cart, name = 'cart'),
      
      path('update-item/', views.UpdateItem, name= 'update-item'),
-     path('make-order/', views.MakeOrder, name= 'make-order')
+     path('make-order/', views.MakeOrder, name= 'make-order'),
+     path('search', views.search, name= 'search')
      # path('store/', views.store, name = 'store'),
 ]

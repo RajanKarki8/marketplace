@@ -17,18 +17,24 @@
         <li  class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8080/">Blog</a>
         </li>
+        
+        <form action = "{%url 'search'%}" method = 'get'>
+          <input class="form-control mr-sm-2" name = 'q' type="search" placeholder="Search" aria-label="Search">
+          
+        </form> 
     
-      </ul>
+      {% comment %} </ul> {% endcomment %}
 
-      <ul class  = 'navbar-nav mr-auto'>
-      <li class="nav">
+      {% comment %} <ul class  = 'navbar-nav mr-auto'>
+      <li class="nav"> {% endcomment %}
         {% comment %} <a class="nav-link" href="{%url 'register'%}">Register</a> {% endcomment %}
       </li>
+      
       {%if user.is_authenticated%}
       <li class="nav">
         <a class="nav-link" href="{%url 'logout'%}">Logout</a>
       </li>
-
+    
       {%else%}
       <li class="nav-item">
         <a class="nav-link" href="{%url 'login'%}">Login</a>
@@ -41,9 +47,6 @@
       </a>
       <p class = 'cart-total'>{{cartItems}}</p>
       
-     {% comment %} <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> {% endcomment %}
+      
     </div>
   </nav>

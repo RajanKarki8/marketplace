@@ -12,7 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 
 from django.http import JsonResponse
-
+from django.db.models import Q
 # registeration form
 def user_register(request):
     if request.method == 'POST':
@@ -120,6 +120,13 @@ def UpdateItem(request):
 def MakeOrder(request):
     print('Data', request.body)
     return JsonResponse('Payment complete', safe=False)
+
+def search(request):
+    
+    q = request.GET.get('q', '')
+    items = Product.objects.filter(Q(name__icontains = q)|Q(description__icontains = q))
+    context = {'q':q , 'items':items}
+    return render(request, 'live/search.html', context)
 
 
 

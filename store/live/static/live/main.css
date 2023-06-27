@@ -4,15 +4,20 @@
     color: red;
 } */
 
+.row {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
 #cart-icon {
-    width: 55px;
+    width: 45px;
     display: inline-block;
     margin-left: 15px;
 }
 
 .box-element {
     box-shadow: hsl(0, 0%, 80%) 0 0 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     margin: 25px;
 }
@@ -82,7 +87,7 @@ h1 {
     box-shadow: hsl(0, 0%, 80%) 0 0 5px;
     border-radius: 5px;
     padding: 10px;
-    margin: 21px;
+    margin: 74px;
     background-color: black;
     color: white;
 }

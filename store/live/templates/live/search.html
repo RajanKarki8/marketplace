@@ -1,0 +1,31 @@
+{% extends 'live/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3>Search Result for: {{ q }}</h3>
+    <div class="row">
+        {% for product in items %}
+            <div class="col-lg-4">
+                <div class="box-element">
+                    <a href="#"><img class="thumbnail" src="{{ product.imageUrl }}"></a>
+                    <h6><strong>{{ product.name }}</strong></h6>
+                    <p>{{ product.description }}</p>
+                    <hr>
+                    <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="#">Details</a>
+                    <h4 style="display: inline-block; float: right">${{ product.price|floatformat:2 }}</h4>
+                </div>
+            </div>
+        {% empty %}
+          <div class = 'container'>    
+            <h3>No results found</h3>
+          </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+
+
+
+
+

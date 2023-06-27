@@ -5,54 +5,28 @@
 <div class="center">
     <h1 class="text-center">
       <center>Largest Online <button class="btn btn-outline-primary">MarketPlace</button></center>
-      <center>
+    <center>
       <p>
-        <h6>&lt;my name is rajan karkee and I am a good programmer&gt;</h6>
+        <h6>&lt;buy one get one free&gt;</h6>
       </p>
-    </center>
-    <form action="/search" method="get">
-      <input type="text" name="query" placeholder="Search..." required>
-      <button type="submit">Search</button>
-    </form>
+    </center>   
 </h1>
 </div>
-
 <div class = 'row'>
     {%for product in products%}
 <div class='col-lg-4'>
     <div class='box-element'>
  <a><img class='thumbnail' src="{{product.imageUrl}}"></a>
-<h6><strong>{{product.name}}</strong></h6>
+ <h6><strong>{{product.name}}</strong></h6>
  <p>{{product.description}}</p>
 <hr>
-<button data-product={{product.id}} data-action='add' class = 'btn btn-outline-secondary add-btn update-cart'>Add to Cart</button>
+<button data-product={{product.id}} data-action='add' 
+class = 'btn btn-outline-secondary add-btn update-cart'>Add to Cart</button>
 <a class = 'btn btn-outline-success' href='#'>Details</a>
 <h4 style = 'display: inline-block;float:right'>${{product.price|floatformat:2}}</h4>
     </div>
 </div>
-    {%endfor%}
+    {%endfor%} 
 </div>
+
 {%endblock content%}
-{% comment %} <div class='col-lg-4'>  
-    <div class='box-element'>
-    <img class='thumbnail' src="{%static 'css/item.png'%}"> 
-    <h6><strong>Product</strong></h6>
-    <hr>
-<button class = 'btn btn-outline-secondary add-btn'>Add to Cart</button>
-<a class='btn btn-outline-success' href = '#'>View</a>
-<h4 style='display:inline-block;float:right'>$90</h4>
-    </div>
-</div>
-
-<div class='col-lg-4'>
-    <div class='box-element'> 
-    <img class='thumbnail' src="{%static 'css/item.png'%}"> 
-    <h6><strong>Product</strong></h6>
-    <hr>
-<button class = 'btn btn-outline-secondary add-btn'>Add to Cart</button>
-<a class='btn btn-outline-success' href='#'>View</a>
-<h4 style='display:inline-block;float:right'>$10</h4>
-    </div>
-</div>
-
-</div> {% endcomment %}

@@ -27,14 +27,7 @@ class Product(models.Model):
         except:
             url = ''
         return url
-    # @property
-    # def imageUrl(self):
-    #     if hasattr(self, 'image') and self.image is not None and hasattr(self.image, 'url'):
-    #         url = self.image.url
-    #     else:
-    #         url = ''
-    #     return url
-    
+   
 class Order(models.Model):
     customer = models.ForeignKey(
         Customer, on_delete=models.SET_NULL, blank=True, null=True)
@@ -53,8 +46,7 @@ class Order(models.Model):
             if i.product.digital == False:
                 shipping = True
             return shipping
-            
-    
+                
     @property
     def get_cart_total(self):
         orderitems = self.orderitem_set.all()
