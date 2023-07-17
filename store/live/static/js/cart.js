@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var UpdateBtns = document.getElementsByClassName('update-cart');
     for (var i = 0; i < UpdateBtns.length; i++) {

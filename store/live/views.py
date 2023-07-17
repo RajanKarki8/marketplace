@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.dispatch import receiver
 from django.contrib.auth.signals import user_logged_in, user_logged_out
 from django.contrib.auth.forms import UserCreationForm
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm        
 
 from django.http import JsonResponse
 from django.db.models import Q

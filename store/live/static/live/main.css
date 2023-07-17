@@ -5,8 +5,10 @@
 } */
 
 .row {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* grid-template-columns: 1fr 3fr; */
 }
 
 #cart-icon {
@@ -83,11 +85,10 @@ h1 {
     /* Adjust the font size as per your preference */
 }
 
-.center {
-    box-shadow: hsl(0, 0%, 80%) 0 0 5px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 74px;
-    background-color: black;
-    color: white;
+.container {
+    border: 10px solid white;
+    padding: 50px;
+    margin: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
